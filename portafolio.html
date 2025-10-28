@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portafolio</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    body {
+        background: #fdf6b2;
+        color: #2b2b2b;
+    }
+
+    header {
+        background-color: #3c2b57;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        padding: 10px 0;
+    }
+
+    header h1 {
+        font-size: 1.4rem;
+        font-weight: bold;
+    }
+
+    .logo {
+        position: absolute;
+        left: 15px;
+        top: 8px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    section {
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    h2 {
+        margin-bottom: 10px;
+        font-size: 1.6rem;
+    }
+
+    /* Colores de secciones */
+    .ilustracion { background: #19d3c5; }
+    .fotografia { background: #3b2a64; color: white; }
+    .animacion { background: #e45c7a; }
+    .edicion { background: #f4d032; }
+
+    /* Carrusel */
+    .carousel-container {
+        position: relative;
+        width: 95%;
+        height: 520px;
+        margin: 0 auto;
+        overflow: hidden;
+        border: 2px solid black;
+        border-radius: 10px;
+        background: rgb(255, 250, 187);
+    }
+
+    .carousel {
+        display: flex;
+        align-items: center;
+        transition: transform 0.5s ease-in-out;
+        gap: 10px; /* espacio entre imágenes */
+        padding: 10px;
+    }
+
+    .carousel img {
+        height: 500px; /* altura fija */
+        width: auto; /* mantiene proporción */
+        border-radius: 8px;
+        object-fit: contain;
+        flex-shrink: 0;
+        background: #f1f1f1;
+    }
+
+    .arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0,0,0,0.3);
+        color: white;
+        border: none;
+        font-size: 24px;
+        padding: 8px 12px;
+        cursor: pointer;
+        border-radius: 50%;
+        z-index: 2;
+        transition: background-color 0.3s;
+    }
+
+    .arrow:hover {
+        background-color: rgba(0,0,0,0.5);
+    }
+
+    .arrow.left { left: 10px; }
+    .arrow.right { right: 10px; }
+
+    /* Carrusel de videos */
+    .video-carousel-container {
+        position: relative;
+        width: 95%;
+        height: 520px;
+        margin: 20px auto;
+        overflow: hidden;
+        border: 2px solid black;
+        border-radius: 10px;
+        background: #fff8dc;
+    }
+
+    .video-carousel {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .video-carousel iframe {
+        width: 600px;
+        height: 500px;
+        border-radius: 10px;
+        background: black;
+        flex-shrink: 0;
+    }
+
+    .footer {
+        background-color: #19d3c5;
+        padding: 10px;
+        text-align: center;
+        font-weight: bold;
+    }
+    .titulo{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+    footer {
+        background: #00b7c2;
+        padding: 20px;
+        text-align: left;
+        color: black;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <a href="index.html"><img src="dibujos/logo.png" alt="Logo" class="logo"></a>
+    <img src="portafolio .png" alt="">
+</header>
+
+<!-- ILUSTRACIÓN -->
+<div class="titulo">
+    <img src="ilustracion.png" alt="">
+</div>
+<section class="ilustracion">
+    <div class="carousel-container">
+        <button class="arrow left" onclick="moveSlide('carousel1', -1)">&#10094;</button>
+        <div class="carousel" id="carousel1">
+            <img src="dibujos/amigi.png" alt="Ilustración 1">
+            <img src="dibujos/hikaru.png" alt="Ilustración 2">
+            <img src="dibujos/i.nbb.png" alt="Ilustración 3">
+            <img src="dibujos/poster.jpg" alt="Ilustración 4">
+            <img src="dibujos/principito.png" alt="Ilustración 5">
+            <img src="dibujos/sena.png" alt="Ilustración 6">
+            <img src="dibujos/sena2.png" alt="Ilustración 7">
+            <img src="dibujos/sena3.png" alt="Ilustración 8">
+            <img src="dibujos/shigy.png" alt="Ilustración 9">
+            <img src="dibujos/umbrella.png" alt="Ilustración 10">
+            
+        </div>
+        <button class="arrow right" onclick="moveSlide('carousel1', 1)">&#10095;</button>
+    </div>
+</section>
+
+<!-- FOTOGRAFÍA -->
+<div class="titulo">
+    <img src="foto.png" alt="">
+</div>
+<section class="fotografia">
+    <div class="carousel-container">
+        <button class="arrow left" onclick="moveSlide('carousel2', -1)">&#10094;</button>
+        <div class="carousel" id="carousel2">
+            <img src="fotografia/1.jpg" alt="Foto 1">
+            <img src="fotografia/2.jpg" alt="Foto 2">
+            <img src="fotografia/3.jpg" alt="Foto 3">
+            <img src="fotografia/4.jpg" alt="Foto 4">
+            <img src="fotografia/5.jpg" alt="Foto 4">
+            <img src="fotografia/6.jpg" alt="Foto 4">
+            <img src="fotografia/7.jpg" alt="Foto 4">
+        </div>
+        <button class="arrow right" onclick="moveSlide('carousel2', 1)">&#10095;</button>
+    </div>
+</section>
+
+<!-- ANIMACIÓN -->
+<div class="titulo">
+    <img src="anima.png" alt="">
+</div>
+<section class="animacion">
+    <div class="video-carousel-container">
+        <button class="arrow left" onclick="moveVideo('videoCarousel1', -1)">&#10094;</button>
+        <div class="video-carousel" id="videoCarousel1">
+            <!-- Enlaces de YouTube -->
+            <iframe src="https://www.youtube.com/embed/WQVn2TLGmDU" frameborder="0" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/9qcvntnqJrA" frameborder="0" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/O_-4O9u2HBE" frameborder="0" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/6MU14WkGZFo" frameborder="0" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/pMyJe7ZUuCI" frameborder="0" allowfullscreen></iframe>
+
+        </div>
+        <button class="arrow right" onclick="moveVideo('videoCarousel1', 1)">&#10095;</button>
+    </div>
+</section>
+
+<!-- EDICIÓN -->
+ <div class="titulo">
+    <img src="edic.png" alt="">
+ </div>
+<section class="edicion">
+    <div class="video-carousel-container">
+        <button class="arrow left" onclick="moveVideo('videoCarousel2', -1)">&#10094;</button>
+        <div class="video-carousel" id="videoCarousel2">
+            <!-- Enlaces de YouTube -->
+            <iframe src="https://www.youtube.com/embed/iHzj4QOpiFg" frameborder="0" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/nOpOgg8I2ms" frameborder="0" allowfullscreen></iframe>
+
+        </div>
+        <button class="arrow right" onclick="moveVideo('videoCarousel2', 1)">&#10095;</button>
+    </div>
+</section>
+
+<footer>
+  
+</footer>
+
+<script>
+const positions = { carousel1: 0, carousel2: 0 };
+const videoPositions = { videoCarousel1: 0, videoCarousel2: 0 };
+const GAP = 10; // espacio entre imágenes
+
+function getCarouselDimensions(id) {
+    const carousel = document.getElementById(id);
+    if (!carousel || carousel.children.length === 0) return null;
+
+    const container = carousel.parentElement;
+    const totalWidth = carousel.scrollWidth; // ancho total del contenido
+    const containerWidth = container.offsetWidth;
+
+    return { carousel, totalWidth, containerWidth };
+}
+
+function move(id, direction, isVideo = false) {
+    const data = getCarouselDimensions(id);
+    if (!data) return;
+
+    const { carousel, totalWidth, containerWidth } = data;
+    const posDict = isVideo ? videoPositions : positions;
+
+    // movimiento: desplazamos el ancho visible completo
+    const step = containerWidth * 0.9; // mover casi una "pantalla"
+    posDict[id] += direction * step;
+
+    // límites
+    if (posDict[id] < 0) posDict[id] = 0;
+    if (posDict[id] > totalWidth - containerWidth)
+        posDict[id] = totalWidth - containerWidth;
+
+    carousel.style.transform = `translateX(-${posDict[id]}px)`;
+}
+
+// wrappers
+function moveSlide(id, direction) {
+    move(id, direction, false);
+}
+
+function moveVideo(id, direction) {
+    move(id, direction, true);
+}
+
+// Ajuste al redimensionar la ventana
+window.addEventListener('resize', () => {
+    moveSlide('carousel1', 0);
+    moveSlide('carousel2', 0);
+    moveVideo('videoCarousel1', 0);
+    moveVideo('videoCarousel2', 0);
+});
+</script>
+</script>
+
+</body>
+</html>
